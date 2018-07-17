@@ -63,10 +63,8 @@ def get_campaign_data(account, start_date, end_date):
         for stat in my_insights:
             data_dict = {}
             for statfield in stat:
-#                print("\t%s:\t\t%s" % (statfield, stat[statfield]))
                 if statfield != 'actions':
                     data_dict[statfield] = stat[statfield]
-                    print(statfield)
                 else:
                     for i in stat[statfield]:
                         if i.get('action_type') == 'mobile_app_install':
